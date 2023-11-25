@@ -69,18 +69,20 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
   return (
     <div onClick={handleClick}
         className={clsx(`
-            w-full
-            relative
-            flex
-            items-center
-            space-x-3
-            hover:bg-neutral-300
-            rounded-lg
-            trannsition
-            cursor-pointer
-            p-3
+        w-full
+        relative
+        flex
+        mb-1
+        items-center
+        space-x-3
+        border-b
+        p-3
+        hover:bg-gray-300
+        hover:rounded-xl
+        transition
+        cursor-pointer
         `,
-            selected ? 'bg-neutral-100' : 'bg-white'
+            selected ? 'bg-indigo-500 rounded-xl' : 'bg-gray-100'
         )}
     >
         {data.isGroup ? (
@@ -92,11 +94,15 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         <div className="min-w-0 flex-1">
             <div className="focus:outline-none">
                 <div className="flex justify-between items-center mb-1">
-                    <p className='text-md font-medium text-gray-900'>
+                    <p className={clsx(`
+                        text-md font-medium text-gray-900
+                    `,
+                    selected ? 'text-white' : 'text-black font-medium'
+                    )}>
                         {data.name || otherUser.name}
                     </p>
                     {lastMessage?.createdAt && (
-                        <p className='text-xs text-gray-400 font-light'>
+                        <p className='text-xs text-black font-normal'>
                             {format(new Date(lastMessage.createdAt), 'p')}
                         </p>
                     )}
@@ -104,8 +110,10 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
                 <p className={clsx(`
                     truncate
                     text-sm
+                    text-black
                 `,
-                    hasSeen ? 'text-gray-500' : 'text-black font-medium'
+                    selected ? 'text-white' : 'text-black font-medium',
+                    hasSeen ? 'text-black' : 'font-bold'
                 )}>
                     {lastMessageText}
                 </p>

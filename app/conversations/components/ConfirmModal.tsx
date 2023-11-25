@@ -38,7 +38,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-        <div className="sm:flex sm:items-start">
+        <div className="sm:flex sm:items-start pt-5 lg:pt-0">
             <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                 <FiAlertTriangle 
                     className="h-6 w-6 text-red-600"
@@ -46,21 +46,21 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
             </div>
             <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                 <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                    Delete Conversation
+                    Hapus Obrolan
                 </Dialog.Title>
                 <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                        Are you sure want to delete this conversation? it will deleted permanently.
+                        Anda yakin ingin menghapus obrolan ini? Opsi ini akan menghapus obrolan secara permanen.
                     </p>
                 </div>
             </div>
         </div>
-        <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+        <div className="mt-5 sm:mt-4 flex flex-row-reverse">
             <Button disabled={isLoading} danger onClick={onDelete}>
-                Delete
+                Hapus
             </Button>
             <Button disabled={isLoading} secondary onClick={onClose}>
-                Cancel
+                Batal
             </Button>
         </div>
     </Modal>

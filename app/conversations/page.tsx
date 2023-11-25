@@ -1,7 +1,7 @@
 'use client'
 import clsx from "clsx"
 import useConversation from "../hooks/useConversation"
-import EmptyState from "../components/EmptyState"
+import EmptyState from "../components/EmptyStateConversation"
 
 const Home = () => {
     const {isOpen} = useConversation()
@@ -9,7 +9,7 @@ const Home = () => {
     return(
         <div
         className={clsx(`
-            lg:pl-80 h-full lg:block
+        lg:pl-[30rem] py-3 pr-3 h-full lg:block
         `,
             isOpen ? 'block' : 'hidden'
         )}

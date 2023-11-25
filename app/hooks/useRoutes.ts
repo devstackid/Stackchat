@@ -8,6 +8,8 @@ import {
 } from 'react-icons/hi2'
 import { signOut } from "next-auth/react";
 import useConversation from "./useConversation";
+import { CiCamera } from "react-icons/ci";
+import { FaPhoneVolume } from "react-icons/fa6";
 
 const useRoutes = () => {
     const pathname = usePathname()
@@ -25,6 +27,18 @@ const useRoutes = () => {
             href: '/users',
             icon: HiUser,
             active: pathname == '/users'
+        },
+        {
+            label: 'Status',
+            href: '/users',
+            icon: CiCamera,
+            active: pathname == '/stories'
+        },
+        {
+            label: 'Panggilan',
+            href: '/users',
+            icon: FaPhoneVolume,
+            active: pathname == '/logs'
         },
         {
             label: 'Logout',

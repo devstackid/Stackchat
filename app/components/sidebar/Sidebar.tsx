@@ -10,7 +10,7 @@ async function Sidebar({
     const currentUser = await getCurrentUser()
 
     return (
-        <div className="h-full">
+        <div className="h-full bg-gray-100">
             <DesktopSidebar currentUser={currentUser!} />
             <MobileFooter />
             <main className="lg:pl-20 h-full">

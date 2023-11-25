@@ -54,16 +54,16 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
     <Modal isOpen={isOpen} onClose={onClose}>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-12">
-                <div className="border-b border-gray-900/10 pb-">
+                <div className="border-b border-gray-900/10 pt-5 lg:pt-2 py-2">
                     <h2 className="text-base font-semibold leading-7 text-gray-900">
-                        Create a group chat
+                        Buat Grup
                     </h2>
                     <p className="mt-1 text-sm leading-6 text-gray-600">
-                        Create a chat more than 2 people
+                        Buat obrolan lebih dari 2 orang
                     </p>
                     <div className="mt-10 flex flex-col gap-y-8">
-                        <Input register={register} label="Name" id="name" disabled={isLoading} required errors={errors} />
-                        <Select disabled={isLoading} label="Members" 
+                        <Input register={register} label="Nama Grup" id="name" disabled={isLoading} required errors={errors} />
+                        <Select disabled={isLoading} label="Anggota" 
                             options={users.map((user) => ({
                                 value: user.id,
                                 label: user.name

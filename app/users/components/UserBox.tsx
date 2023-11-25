@@ -41,10 +41,10 @@ const UserBox: React.FC<UserBoxProps> = ({
                 flex
                 items-center
                 space-x-3
-                bg-white
+                border-b
                 p-3
-                hover:bg-neutral-300
-                rounded-lg
+                hover:bg-indigo-500
+                hover:rounded-xl
                 transition
                 cursor-pointer
             '
@@ -53,7 +53,7 @@ const UserBox: React.FC<UserBoxProps> = ({
             <div className="min-w-0 flex-1">
                 <div className="focus:outline-none">
                     <div className="flex justify-between items-center mb-1">
-                        <p className="text-sm font-medium text-gray-900">
+                        <p className="text-xs font-bold capitalize text-gray-900">
                             {data.name}
                         </p>
                     </div>

@@ -31,6 +31,7 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
          className={clsx(`
             group
             flex
+            items-center
             gap-x-3
             rounded-md
             p-3
@@ -41,11 +42,11 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
             hover:text-black
             hover:bg-gray-100
          `,
-            active && 'bg-gray-100 text-black'
+            active && 'bg-indigo-500 text-white'
          )}
         >
             <Icon clasName='h-6 w-6 shrink-0' />
-            <span className='sr-only'>{label}</span>
+            <span className=''>{label}</span>
         </Link>
     </li>
   )

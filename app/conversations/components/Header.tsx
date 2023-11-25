@@ -54,12 +54,12 @@ const Header: React.FC<HeaderProps> = ({
                     <div>
                         {conversation.name || otherUser.name}
                     </div>
-                    <div className="text-sm font-light text-neutral-500">
+                    <div className="text-sm font-bold text-black">
                         {statusText}
                     </div>
                 </div>
             </div>
-            <HiEllipsisHorizontal size={32} onClick={()=>setDrawerOpen(true)} className="text-sky-500 cursor-pointer hover:text-sky-600 transition" />
+            <HiEllipsisHorizontal size={32} onClick={()=>setDrawerOpen(true)} className="text-indigo-500 cursor-pointer hover:text-indigo-600 transition" />
         </div>
     </>
   )

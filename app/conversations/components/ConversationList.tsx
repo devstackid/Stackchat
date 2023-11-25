@@ -4,7 +4,7 @@ import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
-import { MdOutlineGroupAdd } from 'react-icons/md';
+import { FaUserPlus } from "react-icons/fa6";
 import clsx from "clsx";
 import { find, uniq } from 'lodash';
 
@@ -13,6 +13,7 @@ import { pusherClient } from "@/app/libs/pusher";
 import GroupChatModal from "./GroupChatModal";
 import ConversationBox from "./ConversationBox";
 import { FullConversationType } from "@/app/types";
+import { FaSearch } from "react-icons/fa";
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
@@ -97,22 +98,26 @@ const ConversationList: React.FC<ConversationListProps> = ({
         onClose={() => setIsModalOpen(false)}
       />
       <aside className={clsx(`
-        fixed 
-        inset-y-0 
+        fixed
+        inset-y-0
         pb-20
         lg:pb-0
-        lg:left-20 
-        lg:w-80 
+        lg:left-56
+        lg:w-80
         lg:block
-        overflow-y-auto 
-        border-r 
-        border-gray-200 
+        bg-gray-100
+        overflow-y-auto
+        my-3
+        block
+        w-full
+        left-0 
       `, isOpen ? 'hidden' : 'block w-full left-0')}>
         <div className="px-5">
           <div className="flex justify-between mb-4 pt-4">
             <div className="text-2xl font-bold text-neutral-800">
-              Messages
+              Obrolan <span className='block text-xs font-normal text-gray-500'>Ketuk untuk membuka obrolan</span>
             </div>
+            
             <div 
               onClick={() => setIsModalOpen(true)} 
               className="
@@ -125,9 +130,13 @@ const ConversationList: React.FC<ConversationListProps> = ({
                 transition
               "
             >
-              <MdOutlineGroupAdd size={20} />
+              <FaUserPlus size={20} />
             </div>
           </div>
+          <div className='flex items-center justify-start gap-2 py-2 px-3 rounded-xl bg-gray-200 mb-3'>
+                    <FaSearch size={20} />
+                    <input type="text" placeholder='Search' className='bg-transparent text-xs ring-0 p-2 outline-none' />
+                </div>
           {items.map((item) => (
             <ConversationBox
               key={item.id}

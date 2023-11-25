@@ -1,6 +1,6 @@
 "use client"
 
-import Avatar from "@/app/components/Avatar"
+import Avatar from "@/app/components/AvatarDrawer"
 import useOtherUser from "@/app/hooks/useOtherUser"
 import { Transition, Dialog } from "@headlessui/react"
 import { Conversation, User } from "@prisma/client"
@@ -91,7 +91,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                               <Avatar user={otherUser} />
                             )}
                           </div>
-                          <div>
+                          <div className="text-base font-bold">
                             {title}
                           </div>
                           <div className="text-sm text-gray-500">
@@ -99,11 +99,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                           </div>
                           <div className="flex gap-10 my-8">
                             <div onClick={()=>setConfirmOpen(true)} className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75">
-                              <div className="w-10 h-10 bg-neutral-100 flex items-center justify-center">
-                                <IoTrash size={20}/>
-                              </div>
-                              <div className="text-sm font-light text-neutral-600">
-                                Delete
+                              <div className="px-3 py-2 rounded-xl bg-indigo-500 text-sm font-bold text-white gap-2 flex items-center justify-center">
+                                <IoTrash size={20}/> Hapus Obrolan
                               </div>
                             </div>
                           </div>
@@ -135,7 +132,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                   <hr />
                                   <div>
                                     <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
-                                      Joined
+                                      Bergabung pada
                                     </dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
                                       <time dateTime={joinedDate}>
