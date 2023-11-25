@@ -5,7 +5,6 @@ import { useCallback } from 'react';
 import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
 import Button from '@/app/components/Button';
 import AuthSocialButton from './AuthSocialButton';
-// import {BsGithub, BsGoogle} from 'react-icons/bs'
 import { FcGoogle } from "react-icons/fc";
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
@@ -113,10 +112,7 @@ const AuthForm = () => {
                     </div>
 
                     <div className="mt-3 lg:mt-6 z-30 flex gap-2">
-                        {/* <AuthSocialButton
-                            icon={BsGithub}
-                            onClick={() => socialAction('github')}
-                        /> */}
+                        
                         <AuthSocialButton
                             icon={FcGoogle}
                             onClick={() => socialAction('google')}
