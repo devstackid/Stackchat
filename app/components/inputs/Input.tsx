@@ -21,24 +21,29 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return(
     <div>
-      <label htmlFor={id} className='block text-sm font-medium leading-6 text-gray-900'>{label}</label>
-      <div className="mt-2">
+      <label htmlFor={id} className='block text-xs lg:text-sm font-medium leading-6 text-gray-900'>{label}</label>
+      <div className="mt-1 lg:mt-2">
         <input type={type} id={id} autoComplete={id} disabled={disabled} {...register(id, {required})} className={clsx(`
         form-input
         block 
         w-full 
-        rounded-md 
-        border-0 
+        lg:rounded-md 
+        border-0
+        px-0
+        lg:px-2
+        lg:border-b-0
+        border-b
+        focus:ring-0
         py-1.5 
         text-gray-900 
-        shadow-sm 
-        ring-1 
-        ring-inset 
-        ring-gray-300 
+        lg:shadow-sm 
+        lg:ring-1 
+        lg:ring-inset 
+        lg:ring-gray-300 
         placeholder:text-gray-400 
-        focus:ring-2 
-        focus:ring-inset 
-        focus:ring-sky-600 
+        lg:focus:ring-2 
+        lg:focus:ring-inset 
+        lg:focus:ring-sky-600 
         sm:text-sm 
         sm:leading-6`, 
         errors[id] && "focus:ring-rose-500", 
